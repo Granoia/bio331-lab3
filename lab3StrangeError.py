@@ -56,13 +56,13 @@ def getEdgeAttributes(edges,edge_type_dict=None):
 def main():
     nodes, edges, edge_dict = readData('EGFR1-reachable.txt')
     edgeAttrs = getEdgeAttributes(edges,edge_dict)
-    
+    print(get_int_types(edge_dict))
 
     data = json_utils.make_json_data(nodes,edges,None,edgeAttrs,'Lab 3','Desc.',['Tag'])
     json_utils.write_json(data,'lab3StrangeError.json')
     graphspace_utils.postGraph('lab3-2-1','lab3.json','franzni@reed.edu','bio331')
 
-    print(get_int_types(edge_dict))
+    
 
 
 
